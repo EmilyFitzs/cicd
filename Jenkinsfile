@@ -11,10 +11,16 @@ pipeline {
                 echo 'this is the testing stage'
             }
         }
-        stage('deploy') {
-            steps {
-                echo 'this is the deployment stage'
+        stage('upload to s3') 
+           steps {
+             sh '/usr/local/bin/aws s3 cp ./www.index.html s3://emily--s3/index.html'
+             sh '/usr/local/bin/aws s3 cp ./www.error.html s3://emily--s3/error.html'
+           }
+       
+
+        // stage('deploy') {
+        //     steps {
+        //         echo 'this is the deployment stage'
             }
-        }
+
     }
-}
