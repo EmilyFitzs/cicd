@@ -17,11 +17,4 @@ pipeline {
              sh '/usr/local/bin/aws s3 cp ./www.error.html s3://emily--s3/error.html'
            }
         }
-       
-
-        // stage('deploy') {
-        //     steps {
-        //         echo 'this is the deployment stage'
-            
-
     }
